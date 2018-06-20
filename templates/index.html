@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>主页</title>
-</head>
-<body>
-    <p>这是模板</p>
-    {% if user %}
-    <a href=""> {{user}} </a>
-    <a href=""> 注销 </a>
-    {%  else %}
-    <a href=""> 注册 </a>
-    <a href=""> 登陆 </a>
-    {%endif%}
-</body>
-</html>
+{% extends 'base.html' %}
+{% block main %}
+    <h1>这是主页面</h1>
+    <a href="{{ url_for('login') }}"> 登陆 </a>
+    <img src="{{ url_for('static',filename= 'img/1.jpg')}}" width="228" height="304">
+{% endblock %}
